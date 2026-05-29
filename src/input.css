@@ -1,0 +1,4 @@
+@import "tailwindcss";
+
+/* Menggantikan fungsi 'content' di config lama agar class di PHP tidak terhapus */
+@source "../**/*.php";

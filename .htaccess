@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Jika yang diakses bukan file fisik yang benar-benar ada (seperti file CSS/Gambar)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    # Jika yang diakses bukan folder fisik yang benar-benar ada
+    RewriteCond %{REQUEST_FILENAME} !-d
+    
+    # Maka, arahkan semua request URL tersebut ke index.php
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>

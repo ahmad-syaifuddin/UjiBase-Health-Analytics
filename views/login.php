@@ -12,6 +12,12 @@
         <div class="text-center mb-8">
             <h1 class="text-2xl font-extrabold text-teal-700">UjiBase Health</h1>
             <p class="text-sm text-gray-500 mt-1">Sistem Analisis Tren Penyakit</p>
+            <?php if(isset($_SESSION['error']) && !empty($_SESSION['error'])): ?>
+                <div class="bg-red-50 text-red-700 p-3 rounded-md mb-5 text-sm font-semibold border border-red-200">
+                    <?= $_SESSION['error'] ?>
+                </div>
+                <?php unset($_SESSION['error']); // Hapus setelah ditampilkan agar tidak muncul terus ?>
+            <?php endif; ?>
         </div>
 
         <form action="<?= $basePath ?>/login-process" method="POST" class="space-y-5">

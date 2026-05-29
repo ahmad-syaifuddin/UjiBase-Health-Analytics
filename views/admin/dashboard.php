@@ -1,13 +1,4 @@
-<?php 
-// Simulasi Data untuk UI Testing (Bisa dihapus jika sudah pakai data dari database)
-$stokKritis = [
-    ['nama' => 'Amoxicillin 500mg', 'sisa' => 5, 'min' => 10]
-]; 
-$transaksiTerbaru = [
-    ['kode' => 'TRX-260528-001', 'status' => 'Selesai', 'total' => 10000]
-];
-require 'views/partials/header.php'; 
-?>
+ <?php require 'views/partials/header.php'; ?>
 
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
     

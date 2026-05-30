@@ -30,9 +30,16 @@
                     <?php endforeach; ?>
                 </select>
             </div>
-            <div>
-                <label class="block text-sm font-bold text-gray-700 mb-1">Dokter</label>
-                <input type="text" name="nama_dokter" required value="<?= htmlspecialchars($resep_edit['nama_dokter']) ?>" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-teal-500 outline-none">
+           <div>
+                <label class="block text-sm font-bold text-gray-700 mb-1">Dokter Penanggung Jawab</label>
+                <select name="dokter_id" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-teal-500 outline-none transition font-medium text-gray-800 bg-white">
+                    <option value="">-- Pilih Dokter --</option>
+                    <?php foreach($dokter as $d): ?>
+                        <option value="<?= $d['id'] ?>" <?= ($resep_edit['dokter_id'] == $d['id']) ? 'selected' : '' ?>>
+                            <?= htmlspecialchars($d['nama_dokter']) ?> (<?= htmlspecialchars($d['spesialisasi']) ?>)
+                        </option>
+                    <?php endforeach; ?>
+                </select>
             </div>
             <div>
                 <label class="block text-sm font-bold text-gray-700 mb-1">Tanggal Resep</label>
